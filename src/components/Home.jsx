@@ -1,6 +1,4 @@
-"use client";
 import React from "react";
-import FeaturesContainer from "../components/features";
 import { useNavigate } from 'react-router-dom';
 
 function HomePage() {

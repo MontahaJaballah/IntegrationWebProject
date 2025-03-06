@@ -73,11 +73,13 @@ function Header() {
                         alt="Search"
                         size="h-[45px] w-[45px]"
                     />
-                    <ActionIcon
-                        src={Cart}
-                        alt="Basket"
-                        size="h-[50px] w-[50px]"
-                    />
+                    <Link to="/shopping-list">
+                        <img
+                            src={Cart}
+                            className="h-[50px] w-[50px] max-sm:w-10 max-sm:h-10 cursor-pointer"
+                            alt="Basket"
+                        />
+                    </Link>
                     <ActionIcon
                         src={Heart}
                         alt="Favorites"

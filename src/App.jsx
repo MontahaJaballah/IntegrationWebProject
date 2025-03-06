@@ -11,6 +11,8 @@ import CaloriesPerDish from "./components/CaloriesPerDish";
 import CompetitionOfTheDay from "./components/CompetitionOfTheDay";
 import RecipePage from "./components/RecipePage";
 import RecipeDetails from "./components/RecipeDetails";
+import ShoppingList from "./components/ShoppingList";
+import LuckyWheel from "./components/LuckyWheel";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/competition" element={<CompetitionOfTheDay />} />
           <Route path="/recipes" element={<RecipePage />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
+          <Route path="/shopping-list" element={<ShoppingList />} />
+          <Route path="/loyalty" element={<LuckyWheel />} />
         </Routes>
         <FeaturesContainer />
         <Footer />
