@@ -1,5 +1,7 @@
-"use client";
 import React from "react";
+import Facebook from "../assets/images/facebook.png"
+import Instagram from "../assets/images/instagram.png"
+import Tiktok from "../assets/images/tiktok.png"
 
 function Footer() {
   const navigationColumns = [
@@ -14,9 +16,9 @@ function Footer() {
   ];
 
   return (
-    <footer className="flex flex-col items-center text-center px-6 py-16 text-white bg-[#904A41] md:px-10 lg:px-40 min-h-[423px] w-full space-y-10 md:space-y-0 md:flex-row md:justify-between">
+    <footer className="flex flex-col items-start text-left px-6 py-16 text-white bg-[#904A41] md:px-10 lg:px-40 min-h-[423px] w-full space-y-10 md:space-y-0 md:flex-row md:justify-between font-body">
       {/* Brand Section */}
-      <section className="flex flex-col items-center md:items-start w-full md:w-auto max-w-72">
+      <section className="flex flex-col items-start md:items-start w-full md:w-auto max-w-72">
         <h2 className="mb-5 text-3xl font-bold text-amber-400">Exotica</h2>
         <p className="mb-6 text-xl font-semibold tracking-normal leading-7">
           These superfoods are packed with vital nutrients, including vitamins
@@ -26,19 +28,19 @@ function Footer() {
           <h3 className="mb-4 text-3xl font-semibold text-amber-400">
             Follow us
           </h3>
-          <div className="flex gap-4 mb-3 justify-center">
+          <div className="flex gap-4 mb-3 justify-start">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/08a62ceed3934a6254ea3f68b23653efb04b4dde"
+              src={Instagram}
               alt="Instagram"
               className="w-12 h-12"
             />
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c265622a80240e67b9c5559df1580d5f196c792d"
+              src={Facebook}
               alt="Facebook"
               className="w-12 h-12"
             />
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/2872f1efd59b7fba2991d7d7f9ba4bbcb7e29c2e"
+              src={Tiktok}
               alt="TikTok"
               className="w-12 h-12"
             />
@@ -48,9 +50,9 @@ function Footer() {
       </section>
 
       {/* Navigation Section */}
-      <nav className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16 lg:gap-24">
+      <nav className="flex flex-col md:flex-row items-start md:items-start gap-8 md:gap-16 lg:gap-24">
         {navigationColumns.map((column, index) => (
-          <div key={index} className="flex flex-col gap-4">
+          <div key={index} className="flex flex-col gap-7">
             <h3 className="text-xl font-extrabold">{column.title}</h3>
             {column.links.map((link, i) => (
               <a
@@ -66,20 +68,31 @@ function Footer() {
       </nav>
 
       {/* Subscribe Section */}
-      <section className="w-full max-w-md">
-        <h3 className="mb-6 text-2xl font-semibold">Subscribe and get 20% off</h3>
-        <p className="mb-6 text-xl font-semibold tracking-normal leading-7">
+      <section className="w-full max-w-md space-y-10">
+        <h3 className="text-2xl font-semibold">Subscribe to our news letter and get 20% off</h3>
+        <p className="text-xl font-semibold tracking-normal leading-7">
           These superfoods are packed with vital nutrients, including vitamins.
         </p>
-        <div className="p-1 h-14 bg-red-100 rounded-3xl flex items-center w-full">
+        <div className="flex relative items-center p-1 w-full h-14 bg-red-100 rounded-3xl max-sm:h-12">
           <input
             type="text"
             placeholder="Enter your email..."
-            className="w-full h-full bg-transparent text-xl text-black opacity-50 focus:outline-none px-6"
+            className="w-full h-full bg-transparent text-xl text-black placeholder-black placeholder-opacity-50 focus:outline-none ml-6 pr-12"
           />
-          <button className="px-4 text-white bg-amber-500 rounded-full">
-            Send
-          </button>
+          <div className="absolute right-3 cursor-pointer">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 20V4L22 12L3 20ZM5 17L16.85 12L5 7V10.5L11 12L5 13.5V17ZM5 17V12V7V10.5V13.5V17Z"
+                fill="#904A41"
+              />
+            </svg>
+          </div>
         </div>
       </section>
     </footer>
