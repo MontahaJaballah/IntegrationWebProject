@@ -7,6 +7,26 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        wiggle: "wiggle 0.8s ease-in-out infinite",
+        'fade-in': 'fadeIn 1s ease-in-out forwards',
+        'gradient-move': 'gradientMove 5s ease infinite',
+      },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-1deg)" },
+          "50%": { transform: "rotate(1deg)" },
+        },
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+        gradientMove: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
