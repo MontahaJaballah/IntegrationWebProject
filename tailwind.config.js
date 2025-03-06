@@ -1,7 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html", "*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}"
+  ],
   theme: {
     extend: {
       colors: {
@@ -43,9 +46,11 @@ module.exports = {
           light: "#FFF2CC",
           border: "#F5D78E",
         },
-        "custom-brown": "rgb(144, 74, 65)", // Ajouté ici
-        "custom-yellow": "rgba(253, 225, 134, 1)", // Ajouté ici
+        "custom-brown": "rgb(144, 74, 65)",
+        "custom-yellow": "rgba(253, 225, 134, 1)",
         "custom-yellow-2": "rgba(253, 223, 134, 1)",
+        'brand-primary': '#904A41',
+        'brand-secondary': '#F9E1A3',
       },
       spacing: {
         "card-gap": "1.5rem",
@@ -71,6 +76,10 @@ module.exports = {
             fontWeight: "500",
           },
         ],
+      },
+      fontFamily: {
+        'display': ['Quicksand', 'sans-serif'],
+        'body': ['Asap', 'sans-serif'],
       },
     },
   },

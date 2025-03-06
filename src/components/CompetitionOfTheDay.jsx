@@ -1,11 +1,7 @@
-
 import React from "react";
-
 import chef from "../images/chef.png"
 import chef2 from "../images/chef2.png"
 import chef3 from "../images/chef3.png"
-
-"use client"
 
 export default function CompetitionOfTheDay() {
     return (

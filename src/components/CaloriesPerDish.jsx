@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import Footer from "./Footer";
-import Myprofile from "./Myprofile";
-import CompetitionOfTheDay from "./CompetitionOfTheDay";
 import YourCaloryProfile from "./YourCaloryProfile";
 import YourDaily from "./YourDaily";
 
@@ -117,7 +114,6 @@ function CaloriesPerDish() {
                     <span aria-hidden="true">&gt;</span>
                 </button>
             </nav>
-            <Footer />
         </section>
     );
 }
