@@ -65,7 +65,7 @@ const SpinWheel = () => {
         >
           spin
         </div>
-        <div ref={wheelRef} className="wheel absolute top-0 left-0 w-full h-full bg-gray-800 rounded-full overflow-hidden shadow-wheel transition-transform duration-[5s] ease-in-out">
+        <div ref={wheelRef} className="wheel absolute top-0 left-0 w-full h-full bg-gray-800 rounded-full overflow-hidden shadow-wheel transition-transform  ease-in-out">
           {prizes.map((prize, index) => (
             <div key={index} className="number" style={{ "--i": index + 1, "--clr": ["#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#D4A5A5", "#9B5DE5", "#F15BB5", "#00BBF9"][index] }}>
               <span>{prize.emoji}</span>
