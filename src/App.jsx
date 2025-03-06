@@ -16,6 +16,7 @@ import LuckyWheel from "./components/LuckyWheel";
 import LoyaltyPage from "./components/LoyaltyPage";
 import DiscountPage from "./components/DiscountPage";
 import MysteryBox from "./components/MysteryBox";
+import Dishes from "./components/Dishes";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
           <Route path="/forum" element={<ForumHome />} />
           <Route path="/forum/post/:id" element={<ForumPost />} />
           <Route path="/calories" element={<CaloriesPerDish />} />
-          <Route path="/competition" element={<CompetitionOfTheDay />} />
+          <Route path="/competition" element={<Dishes />} />
           <Route path="/recipes" element={<RecipePage />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
           <Route path="/shopping-list" element={<ShoppingList />} />
