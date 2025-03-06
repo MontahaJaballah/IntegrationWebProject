@@ -80,11 +80,14 @@ function Header() {
                             alt="Basket"
                         />
                     </Link>
-                    <ActionIcon
-                        src={Heart}
-                        alt="Favorites"
-                        size="h-[50px] w-[50px]"
-                    />
+                    <Link to="/wheel">
+
+                        <img
+                            src={Heart}
+                            alt="Favorites"
+                            className="h-[50px] w-[50px] max-sm:w-10 max-sm:h-10 cursor-pointer"
+                        />
+                    </Link>
                     <ActionIcon
                         src={User}
                         alt="User profile"

@@ -13,6 +13,9 @@ import RecipePage from "./components/RecipePage";
 import RecipeDetails from "./components/RecipeDetails";
 import ShoppingList from "./components/ShoppingList";
 import LuckyWheel from "./components/LuckyWheel";
+import LoyaltyPage from "./components/LoyaltyPage";
+import DiscountPage from "./components/DiscountPage";
+import MysteryBox from "./components/MysteryBox";
 
 function App() {
   return (
@@ -29,7 +32,10 @@ function App() {
           <Route path="/recipes" element={<RecipePage />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
           <Route path="/shopping-list" element={<ShoppingList />} />
-          <Route path="/loyalty" element={<LuckyWheel />} />
+          <Route path="/wheel" element={<LuckyWheel />} />
+          <Route path="/loyalty" element={<LoyaltyPage />} />
+          <Route path="/discounts" element={<DiscountPage />} />
+          <Route path="/mystery-box" element={<MysteryBox />} />
         </Routes>
         <FeaturesContainer />
         <Footer />
