@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 function RecipePage() {
+  const navigate = useNavigate();
+
   const recipes = [
     {
       id: 1,
@@ -62,20 +65,22 @@ function RecipePage() {
 
   const RecipeCard = ({ title, imageUrl, altText }) => {
     return (
-      <article className="flex flex-col items-center p-2 bg-amber-200 rounded-xl border-[#904A41] border-solid border-[3px] relative transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-[#904A41] cursor-pointer hover:animate-wiggle">
+      <article
+        className="flex flex-col items-center p-2 bg-amber-200 rounded-xl border-[#904A41] border-solid border-[3px] relative transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-[#904A41] cursor-pointer hover:animate-wiggle"
+      >
         <div className="absolute top-2 right-2 flex gap-2 z-10 mb-2">
-          <img 
-            src="src/assets/images_jawher/share.png" 
+          <img
+            src="src/assets/images_jawher/share.png"
             alt="share"
             className="w-6 h-6 cursor-pointer transition-all duration-300 transform hover:scale-110 mt-1"
           />
-          <img 
-            src="src/assets/images_jawher/add.png" 
+          <img
+            src="src/assets/images_jawher/add.png"
             alt="add"
             className="w-6 h-6 cursor-pointer transition-all duration-300 transform hover:scale-110 mt-1"
           />
-          <img 
-            src="src/assets/images_jawher/heart.png" 
+          <img
+            src="src/assets/images_jawher/heart.png"
             alt="heart"
             className="w-6 h-6 cursor-pointer transition-all duration-300 transform hover:scale-110 mt-1"
           />
@@ -83,17 +88,20 @@ function RecipePage() {
 
         <img
           src={imageUrl}
-          className="object-cover mx-0 my-4 mt-8 h-[230px] w-full max-w-[300px] rounded-lg transition-transform duration-300 hover:scale-105 hover:rotate-2"
           alt={altText}
+          className="w-full h-48 object-cover rounded-t-xl"
         />
 
-        <h2 className="mx-0 my-4 text-lg text-center h-[60px] font-semibold transition-all duration-300 hover:text-[#904A41]">
-          {title}
-        </h2>
+        <div className="p-4 w-full">
+          <h3 className="text-2xl font-bold text-[#904A41] mb-2">{title}</h3>
 
-        <button className="px-5 py-2 text-lg font-semibold text-white bg-[#904A41] rounded-xl cursor-pointer border-[none] shadow-md transition-all duration-300 hover:bg-[#a55a52] hover:scale-105 active:translate-y-[2px] active:shadow-sm">
-          Discover
-        </button>
+          <button
+            onClick={() => navigate('/recipes/1')}
+            className="w-full bg-[#904A41] text-white py-2 rounded-md hover:bg-[#6d3930] transition"
+          >
+            Discover Recipe
+          </button>
+        </div>
       </article>
     );
   };
@@ -105,10 +113,6 @@ function RecipePage() {
         rel="stylesheet"
       />
       <main className="relative mx-auto my-0 w-full max-w-[1440px] px-4">
-        <header className="px-0 py-5 text-xl bg-zinc-100 sticky top-0 z-10 shadow-md">
-          Home &gt; Recipes
-        </header>
-
         <section className="px-4 py-10 opacity-0 animate-fade-in">
           <div className="flex gap-5 items-center mb-8">
             <img
@@ -128,7 +132,7 @@ function RecipePage() {
               placeholder="Search recipes..."
               className="flex-1 text-base border-[none] bg-transparent outline-none transition-all duration-300 focus:ring-2 focus:ring-[#904A41] hover:ring-2"
             />
-            <img 
+            <img
               src="src/assets/images_jawher/search.png"
               alt="search"
               className="w-6 h-6 cursor-pointer transition-transform duration-300 transform hover:scale-125"
@@ -182,6 +186,7 @@ function RecipePage() {
           </nav>
         </section>
       </main>
+
     </>
   );
 }

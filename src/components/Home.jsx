@@ -1,7 +1,11 @@
 "use client";
 import React from "react";
+import FeaturesContainer from "../components/features";
+import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
+  const navigate = useNavigate();
+
   // Base URL for all images
   const baseUrl = "https://cdn.builder.io/api/v1/image/assets/TEMP/";
   const apiKeyParam =
@@ -262,7 +266,7 @@ function HomePage() {
       {/* Hero Section */}
       <section className="flex flex-col items-center px-20 pb-28 bg-orange-50 max-md:px-5 max-md:pb-24 max-md:max-w-full">
         <div className="flex flex-col mb-0 w-full max-w-[1119px] max-md:mb-2.5 max-md:max-w-full">
-          <div className="self-end w-full max-w-[1017px] max-md:mr-2.5 max-md:max-w-full">
+          <div className="flex flex-col self-end w-full max-w-[1017px] max-md:mr-2.5 max-md:max-w-full">
             <div className="flex gap-5 max-md:flex-col">
               <div className="w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex flex-col items-start mt-36 w-full text-center max-md:mt-10 max-md:max-w-full">
@@ -443,6 +447,7 @@ function HomePage() {
             </h2>
           </div>
           <button
+            onClick={() => navigate('/recipes')}
             className="flex overflow-hidden items-center justify-center mt-2 text-2xl font-semibold tracking-normal leading-none text-center text-white rounded-xl shadow-sm min-h-[70px] px-6 py-2.5 max-md:px-5"
             style={{ backgroundColor: mainColor }}
           >
@@ -459,19 +464,17 @@ function HomePage() {
                   style={{ borderColor: mainColor }}
                 >
                   <div
-                    className={`flex ${
-                      index === 0 ? "self-end" : "gap-2 items-start self-end"
-                    } max-md:mr-1.5`}
+                    className={`flex ${index === 0 ? "self-end" : "gap-2 items-start self-end"
+                      } max-md:mr-1.5`}
                   >
                     {recipe.saved && (
                       <img
                         src={recipe.saved}
                         alt="Save recipe"
-                        className={`object-contain shrink-0 ${
-                          index === 0
-                            ? "aspect-[1.75] w-[42px]"
-                            : "aspect-square w-[23px]"
-                        }`}
+                        className={`object-contain shrink-0 ${index === 0
+                          ? "aspect-[1.75] w-[42px]"
+                          : "aspect-square w-[23px]"
+                          }`}
                       />
                     )}
                     {recipe.like && (
@@ -501,11 +504,10 @@ function HomePage() {
                         <img
                           src={recipe.badge}
                           alt="Recipe badge"
-                          className={`object-contain ${
-                            index === 0
-                              ? "w-16 aspect-[1.05]"
-                              : "-mb-6 w-11 aspect-[1.33] max-md:-mr-1 max-md:mb-2.5"
-                          }`}
+                          className={`object-contain ${index === 0
+                            ? "w-16 aspect-[1.05]"
+                            : "-mb-6 w-11 aspect-[1.33] max-md:-mr-1 max-md:mb-2.5"
+                            }`}
                         />
                       )}
                     </div>
@@ -518,19 +520,17 @@ function HomePage() {
                   )}
 
                   <h3
-                    className={`${
-                      index === 1
-                        ? "mt-2 text-xl font-medium leading-9 text-center text-black"
-                        : "self-center mt-2 text-xl font-medium leading-relaxed text-center text-black"
-                    }`}
+                    className={`${index === 1
+                      ? "mt-2 text-xl font-medium leading-9 text-center text-black"
+                      : "self-center mt-2 text-xl font-medium leading-relaxed text-center text-black"
+                      }`}
                   >
                     {recipe.title}
                   </h3>
 
                   <button
-                    className={`flex overflow-hidden items-center justify-center self-center ${
-                      index === 1 ? "mt-4" : "mt-14"
-                    } max-w-full text-xl font-semibold tracking-normal leading-none text-center text-white whitespace-nowrap rounded-xl shadow-sm min-h-10 w-[196px] px-6 py-2.5 max-md:px-5 max-md:mt-10`}
+                    className={`flex overflow-hidden items-center justify-center self-center ${index === 1 ? "mt-4" : "mt-14"
+                      } max-w-full text-xl font-semibold tracking-normal leading-none text-center text-white whitespace-nowrap rounded-xl shadow-sm min-h-10 w-[196px] px-6 py-2.5 max-md:px-5 max-md:mt-10`}
                     style={{ backgroundColor: mainColor }}
                   >
                     Discover
@@ -598,9 +598,8 @@ function HomePage() {
             {categories.map((category, index) => (
               <div
                 key={category.id}
-                className={`${
-                  index === 1 ? "ml-5" : ""
-                } w-6/12 max-md:ml-0 max-md:w-full`}
+                className={`${index === 1 ? "ml-5" : ""
+                  } w-6/12 max-md:ml-0 max-md:w-full`}
               >
                 <article className="flex relative flex-col grow px-12 py-24 rounded-xl h-[606px] max-md:px-5 max-md:py-16 max-md:mt-5 max-md:max-w-full max-md:h-[450px] max-sm:h-[350px]">
                   <img
@@ -613,6 +612,7 @@ function HomePage() {
                       {category.title}
                     </h3>
                     <button
+                      onClick={() => navigate('/recipes')}
                       className="flex overflow-hidden relative items-center justify-center self-center mt-auto max-w-full text-3xl font-medium tracking-wide leading-none bg-amber-200 rounded-xl min-h-[98px] w-[356px] px-6 py-2.5 max-md:px-5 max-md:min-h-[80px] max-md:text-2xl max-sm:w-full max-sm:text-xl"
                       style={{ color: mainColor }}
                     >
@@ -641,18 +641,16 @@ function HomePage() {
               {forumPosts.map((post, index) => (
                 <div
                   key={post.id}
-                  className={`${
-                    index > 0 ? "ml-5" : ""
-                  } w-[33%] max-md:ml-0 max-md:w-full`}
+                  className={`${index > 0 ? "ml-5" : ""
+                    } w-[33%] max-md:ml-0 max-md:w-full`}
                 >
                   <article
-                    className={`flex flex-col ${
-                      index === 0
-                        ? "px-3.5 py-10 mx-auto w-full text-black bg-white rounded-xl border-4 border-solid max-md:pr-5 max-md:mt-5"
-                        : index === 1
-                          ? "px-5 py-10 mx-auto w-full text-black bg-white rounded-xl border-4 border-solid max-md:mt-5"
-                          : "grow py-10 w-full bg-white rounded-xl border-4 border-solid max-md:mt-5"
-                    }`}
+                    className={`flex flex-col ${index === 0
+                      ? "px-3.5 py-10 mx-auto w-full text-black bg-white rounded-xl border-4 border-solid max-md:pr-5 max-md:mt-5"
+                      : index === 1
+                        ? "px-5 py-10 mx-auto w-full text-black bg-white rounded-xl border-4 border-solid max-md:mt-5"
+                        : "grow py-10 w-full bg-white rounded-xl border-4 border-solid max-md:mt-5"
+                      }`}
                     style={{ borderColor: mainColor }}
                   >
                     {index === 0 && (
@@ -815,64 +813,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="flex relative flex-col justify-center items-center px-16 py-36 w-full min-h-[470px] max-md:px-5 max-md:py-24 max-md:mr-0.5 max-md:max-w-full">
-        <img
-          src={images.benefitsBg}
-          alt="Benefits background"
-          className="object-cover absolute inset-0 size-full"
-        />
-        <div className="relative pr-6 pl-2 mb-0 max-w-full bg-white w-[1120px] max-md:pr-5 max-md:mb-2.5">
-          <div className="flex gap-5 max-md:flex-col">
-            <div className="w-[68%] max-md:ml-0 max-md:w-full">
-              <div className="flex relative grow gap-5 justify-between items-center font-extrabold text-black max-md:mt-10">
-                <img
-                  src={images.fastDeliveryIcon}
-                  alt="Fast delivery icon"
-                  className="object-contain shrink-0 self-stretch my-auto aspect-[1.29] w-[71px]"
-                />
-                <div className="flex flex-col self-start mt-7">
-                  <h3 className="self-start text-xl">Fast delivery</h3>
-                  <p className="mt-4 text-lg">
-                    We prepare and ship your package the day after your order.
-                  </p>
-                </div>
-                <div className="shrink-0 self-stretch w-2.5 border-orange-200 border-solid border-[10px] h-[175px]" />
-                <img
-                  src={images.pickupIcon}
-                  alt="In-store pickup icon"
-                  className="object-contain shrink-0 self-stretch my-auto aspect-[1.04] w-[59px]"
-                />
-                <div className="flex flex-col self-stretch my-auto">
-                  <h3 className="self-start text-xl">In-Store pickup</h3>
-                  <p className="mt-4 text-lg">
-                    Prefer to collect your order? Choose free same-day pickup at
-                    our store located in Ariena.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="ml-5 w-[32%] max-md:ml-0 max-md:w-full">
-              <div className="flex relative grow gap-4 items-center font-extrabold text-black max-md:mt-10">
-                <div className="shrink-0 self-stretch w-2.5 border-orange-200 border-solid border-[10px] h-[175px]" />
-                <img
-                  src={images.securePaymentIcon}
-                  alt="Secure payment icon"
-                  className="object-contain shrink-0 self-stretch my-auto aspect-square w-[52px]"
-                />
-                <div className="flex flex-col self-stretch my-auto">
-                  <h3 className="self-start text-xl">Secure Payment</h3>
-                  <p className="mt-2 text-lg">
-                    Payments are processed through Monetique Tunisie's
-                    &quot;Clictopay&quot; platform. We do not store any banking
-                    information.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

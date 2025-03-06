@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import likeIcon from '../../assets/images/Forum/like.png';
 import dislikeIcon from '../../assets/images/Forum/dislike.png';

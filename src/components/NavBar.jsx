@@ -40,11 +40,13 @@ function Header() {
     return (
         <>
             <header className="flex relative items-start p-0 mx-auto my-0 max-w-[1144px] max-md:flex-wrap max-md:px-5 max-md:py-0 max-sm:justify-between max-sm:p-2.5 mb-8">
-                <img
-                    src={Logo}
-                    className="h-[200px] w-[192px] object-contain max-sm:h-[100px] max-sm:w-auto"
-                    alt="Exotica logo"
-                />
+                <Link to="/">
+                    <img
+                        src={Logo}
+                        className="h-[200px] w-[192px] object-contain max-sm:h-[100px] max-sm:w-auto cursor-pointer"
+                        alt="Exotica logo"
+                    />
+                </Link>
                 <nav className="flex gap-8 mt-6 ml-12 max-md:ml-5 max-sm:hidden">
                     <NavItem
                         iconSrc={Menu}

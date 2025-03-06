@@ -1,46 +1,57 @@
 import React from "react";
 
+// Import images at the top of the file
+import starIcon from "../assets/images_jawher/star.png";
+import halfStarIcon from "../assets/images_jawher/half_star.png";
+import wasabiIcon from "../assets/images_jawher/wasabi.png";
+
+// Step images
+import slowRoastImage from "../assets/images_jawher/slow_roast.png";
+import coolImage from "../assets/images_jawher/cool.png";
+import crispyPotatoImage from "../assets/images_jawher/crispy_potato.png";
+import sliceImage from "../assets/images_jawher/slice.png";
+
+// Feature icons
+import deliveryIcon from "../assets/images_jawher/Delivery_icon.png";
+import storeIcon from "../assets/images_jawher/Store_icon.png";
+import paymentIcon from "../assets/images_jawher/Payment_icon.png";
+
 function RecipeDetails() {
-  // Recipe steps data
+  // Recipe steps data with updated image paths
   const steps = [
     {
       stepNumber: 1,
       title: "Slow roast",
       description: "Rub beef with oil and salt, roast at 130°...view more",
-      imageUrl:
-        "src/assets/images_jawher/slow_roast.png",
+      imageUrl: slowRoastImage,
     },
     {
       stepNumber: 2,
       title: "Cool",
       description: "Rest at room temp for 30 min, then ...view more",
-      imageUrl:
-        "src/assets/images_jawher/cool.png",
+      imageUrl: coolImage,
     },
     {
       stepNumber: 3,
       title: "Crispy potato straws",
       description: "Julienne potato, rinse, dry, then fry for ...view more",
-      imageUrl:
-      "src/assets/images_jawher/crispy_potato.png"
+      imageUrl: crispyPotatoImage,
     },
     {
       stepNumber: 4,
       title: "Slice",
       description: "Cut into thin slices ...view more",
-      imageUrl:
-    "src/assets/images_jawher/slice.png"
+      imageUrl: sliceImage,
     },
   ];
 
-  // Features data
+  // Features data with updated icon paths
   const features = [
     {
       id: 1,
       title: "Fast delivery",
       description: "We prepare and ship your package the day after your order.",
-      iconUrl:
-        "src/assets/images_jawher/Delivery_icon.png",
+      iconUrl: deliveryIcon,
       altText: "Delivery icon",
     },
     {
@@ -48,8 +59,7 @@ function RecipeDetails() {
       title: "In-Store pickup",
       description:
         "Prefer to collect your order? Choose free same-day pickup at our store located in Ariena.",
-      iconUrl:
-        "src/assets/images_jawher/Store_icon.png",
+      iconUrl: storeIcon,
       altText: "Store icon",
     },
     {
@@ -57,8 +67,7 @@ function RecipeDetails() {
       title: "Secure Payment",
       description:
         'Payments are processed through Monetique Tunisie\'s "Clictopay" platform. We do not store any banking information.',
-      iconUrl:
-        "src/assets/images_jawher/Payment_icon.png",
+      iconUrl: paymentIcon,
       altText: "Payment icon",
     },
   ];
@@ -73,13 +82,6 @@ function RecipeDetails() {
 
       {/* Main Container */}
       <main className="p-0 m-0 min-h-screen bg-white">
-
-        {/* Breadcrumb Navigation */}
-        <nav className="px-60 py-7 text-xl bg-zinc-100 lg:px-40 md:px-20 sm:px-10 max-sm:p-4">
-          <span>Home &gt; recipes &gt;</span>
-          <span className="font-bold">Discover</span>
-        </nav>
-
         {/* Main Content Section */}
         <section className="px-40 py-9 relative lg:px-32 md:px-16 sm:px-8 max-md:p-5 opacity-0 animate-fade-in">
           {/* Title and Bookmark */}
@@ -113,13 +115,13 @@ function RecipeDetails() {
               {[...Array(4)].map((_, index) => (
                 <img
                   key={index}
-                  src="src/assets/images_jawher/star.png"
+                  src={starIcon}
                   alt="star"
                   className="h-[46px] w-[46px] md:h-[40px] md:w-[40px] sm:h-[35px] sm:w-[35px]"
                 />
               ))}
               <img
-                src="src/assets/images_jawher/half_star.png"
+                src={halfStarIcon}
                 alt="half star"
                 className="h-[46px] w-[46px] md:h-[40px] md:w-[40px] sm:h-[35px] sm:w-[35px]"
               />
@@ -132,7 +134,7 @@ function RecipeDetails() {
               Ask Wasabi
             </h3>
             <img
-              src="src/assets/images_jawher/wasabi.png"
+              src={wasabiIcon}
               alt="Wasabi"
               className="ml-auto h-[91px] rounded-[50px] w-[90px] md:h-[75px] md:w-[75px] sm:h-[60px] sm:w-[60px] max-sm:h-[60px] max-sm:w-[60px] transition-all duration-300 hover:scale-110"
             />
@@ -175,21 +177,6 @@ function RecipeDetails() {
               Add to basket
             </button>
           </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="grid gap-10 p-10 mt-16 bg-white grid-cols-[repeat(3,1fr)] max-md:grid-cols-[1fr] max-sm:gap-5 max-sm:grid-cols-[1fr]">
-          {features.map((feature) => (
-            <article key={feature.id} className="text-center transition-all ease-in-out duration-300 hover:scale-105 hover:shadow-xl">
-              <img
-                src={feature.iconUrl}
-                className="mb-5 h-[60px] w-[60px] mx-auto transition-transform duration-300 transform hover:scale-125 hover:rotate-6 hover:shadow-md hover:shadow-[#904A41]"
-                alt={feature.altText}
-              />
-              <h3 className="mb-2.5 text-xl font-extrabold hover:text-[#904A41]">{feature.title}</h3>
-              <p className="text-lg opacity-50 hover:opacity-100">{feature.description}</p>
-            </article>
-          ))}
         </section>
       </main>
     </>
