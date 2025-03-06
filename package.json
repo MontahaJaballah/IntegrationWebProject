@@ -3,13 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "wind": "npx tailwindcss -i ./src/index.css -o ./public/style.css --watch"
-  },
+  "scripts": { 
+  "dev": "vite",
+  "build": "npx tailwindcss -i ./src/index.css -o ./public/style.css --minify && vite build",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "wind": "npx tailwindcss -i ./src/index.css -o ./public/style.css --watch"
+},
   "dependencies": {
     "lucide-react": "^0.477.0",
     "react": "^19.0.0",
