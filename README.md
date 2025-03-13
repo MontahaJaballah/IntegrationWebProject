@@ -4,7 +4,7 @@ Exotica is a web application dedicated to showcasing and exploring authentic Jap
 <br>
 Our team followed a structured UI/UX process, transforming ideas from prototyping to high-fidelity designs, which were then developed using React & Tailwind CSS.
 
-🛠️ Tech Stack. <be>
+🛠️ Tech Stack. <br>
 Frontend: React, Tailwind CSS
 Design & Prototyping: Figma
 Collaboration Tools: Trello, Notion, GitHub
