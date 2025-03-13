@@ -1,14 +1,14 @@
-🍣 Exotica – Discover Exotic Asian Cuisine
-🌍 Project Overview
+🍣 Exotica – Discover Exotic Asian Cuisine.
+🌍 Project Overview.
 Exotica is a web application dedicated to showcasing and exploring authentic Japanese and Asian cuisine. The platform provides detailed descriptions, recipes,mystery box , discounts and ordering options for a variety of exotic dishes.
 
 Our team followed a structured UI/UX process, transforming ideas from prototyping to high-fidelity designs, which were then developed using React & Tailwind CSS.
 
-🛠️ Tech Stack
+🛠️ Tech Stack.
 Frontend: React, Tailwind CSS
 Design & Prototyping: Figma
 Collaboration Tools: Trello, Notion, GitHub
-🎨 Design Process
+🎨 Design Process.
 We followed a structured approach to ensure a seamless user experience:
 
 1️⃣ Prototyping: Brainstormed ideas and created rough sketches of the platform.
@@ -26,7 +26,7 @@ We followed a structured approach to ensure a seamless user experience:
 4.Jawher Touil - RecipePage, RecipeDetails , Home
 5.Achref Limem - Dishes , CaloriePerDish , Footer
 
-📦 Installation & Setup
+📦 Installation & Setup.
 To run the project locally:
 ```bash
 npm install
