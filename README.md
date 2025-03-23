@@ -7,9 +7,9 @@ Our team followed a structured UI/UX process, transforming ideas from prototypin
 🛠️ Tech Stack. <br>
 Frontend: React, Tailwind CSS
 Design & Prototyping: Figma
-Collaboration Tools: Trello, Notion, GitHub
-🎨 Design Process.
-We followed a structured approach to ensure a seamless user experience:
+Collaboration Tools: Trello, Notion, GitHub <br>
+🎨 Design Process. <br>
+We followed a structured approach to ensure a seamless user experience: <br>
 
 1️⃣ Prototyping: Brainstormed ideas and created rough sketches of the platform.<br>
 2️⃣ Low-Fidelity Wireframes: Defined the core layout and user journey.<br>
